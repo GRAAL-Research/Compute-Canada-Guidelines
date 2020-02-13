@@ -235,11 +235,13 @@ Note that, if you wish the output to be written in a different directory than th
 
 When a job is running, one might wish to see its status by printing various updates via the `print()` Python function. Simply using the print function on a supercomputer might not yield the desired outcome, as the console output is only flushed once the job is finished. Three main options are available to tackle this problem:
 
+- **Launching Python in unbuffered mode**: Using the `-u` option in your python launching line `python -u my_script.py` forces the stdout and stderr streams to be unbuffered, resulting in `print()` calls being immediately processed.
+
+- **Using the logging library**: You could replace the print calls with corresponding calls in the `logging` [library](https://docs.python.org/3/library/logging.html). All logging calls made through this library are automatically flushed and it also contains numerous quality-of-life improvements over the default print calls.
+
 - **Adding the flush=True option**: You _could_ replace all of your print calls by adding the flush=True option, i.e. `print('Hello World', flush=True)`. This option is however time consuming and should never be the option of choice for any serious project.
 
 - **Adding sys.stdout.flush() calls**: Instead of flushing on every print, you could also only flush at specific moments, by calling the `sys.stdout.flush()` function from the `std` library.
-
-- **Using the logging library**: You could replace the print calls with corresponding calls in the `logging` [library](https://docs.python.org/3/library/logging.html). All logging calls made through this library are automatically flushed and it also contains numerous quality-of-life improvements over the default print calls.
 
 ### Race conditions
 
