@@ -1,6 +1,7 @@
 # Compute Canada Guidelines
 
 Compute Canada (CC) provides access to numerous supercomputing resources, allowing to reach next-level compute power for research projects. This repository aims to provide an easy-to-use guide on how to upscale a research project from local to Compute Canada computing.
+A French video presentation of most of the content listed here is [available on Youtube](https://www.youtube.com/watch?v=koyBeOLtRDk). 
 
 ## Contents
 
